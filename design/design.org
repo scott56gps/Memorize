@@ -1,0 +1,17 @@
+* Design
+** Creating a Game
+   The initializer of CardGame:
+   - Input: numberOfPairs
+   - Input: contentCreator
+
+   From 0 -> numberOfPairs (num): -> pairs
+   MAP num -> (Card, Card)
+
+   Now, shuffle the pairs collection.
+
+
+   Shuffle:
+   Mixes up the contents of the collection.
+
+   For the Pairs:
+   

@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    var imageNames = ["bolt", "0.circle", "01.square.fill", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle"]
+    @ObservedObject var game: IconMemoryGame
+    
     var body: some View {
         VStack {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
-                    ForEach(imageNames, id: \.self) { imageName in
-                        CardView(imageName: imageName)
+                    ForEach(game.cards) { card in
+                        CardView(card: card)
                             .aspectRatio(2/3, contentMode: .fit)
+                            .onTapGesture {
+                                game.choose(card: card)
+                            }
                     }
                 }
             }
@@ -26,34 +30,30 @@ struct ContentView: View {
 }
 
 struct CardView: View {
-    @State var isFaceUp = false
-    var imageName = "bolt"
+    var card: CardGame<String>.Card
     
     var body: some View {
         let shape = RoundedRectangle(cornerRadius: 20)
         ZStack {
-            if isFaceUp {
+            if card.isFaceUp {
                 shape
                     .fill()
                     .foregroundColor(.white)
                 shape
                     .stroke(lineWidth: 3)
-                Image(systemName: imageName)
+                Image(systemName: card.content)
             } else {
                 RoundedRectangle(cornerRadius: 20)
                     .fill()
             }
-        }
-        .onTapGesture {
-            isFaceUp.toggle()
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-        ContentView()
+        ContentView(game: IconMemoryGame())
+        ContentView(game: IconMemoryGame())
             .preferredColorScheme(.dark)
     }
 }

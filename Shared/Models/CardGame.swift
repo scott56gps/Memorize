@@ -17,8 +17,12 @@ struct CardGame<CardContent> {
         }
     }
     
-    func chooseCard(card: Card) {
-        print("Chosen card \(card)")
+    mutating func chooseCard(card: Card) {
+        if let indexOfCard = cards.firstIndex(where: { iterCard in
+            iterCard.id == card.id
+        }) {
+            cards[indexOfCard].isFaceUp.toggle()
+        }
     }
     
     struct Card: Identifiable {

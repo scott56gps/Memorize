@@ -18,7 +18,7 @@ import SwiftUI
 //
 // askQuestion()
 // offerHelp()
-class IconMemoryGame {
+class IconMemoryGame: ObservableObject {
     static let iconNames = ["square.and.arrow.up",
                             "square.and.arrow.up.fill",
                             "square.and.arrow.up.circle",
@@ -44,15 +44,15 @@ class IconMemoryGame {
         }
     }
     
-    private var model: CardGame<String> = IconMemoryGame.createMemoryGame()
+    @Published private var model: CardGame<String> = IconMemoryGame.createMemoryGame()
     
     // MARK: - Access to Model
     // These should be the only windows into the state of the model, in this case, a Game
     // These should be read-only values, the only way the View can know what the game state is
     var cards: [CardGame<String>.Card] { return model.cards }
-    var pairs: Int { model.numberOfPairs }
+    var numberOfPairs: Int { model.numberOfPairs }
     
-    // MARK: - Actions
+    // MARK: - Actions (User Intentions)
     // These should be the only handles a View has to take actions based on game state.
     // AKA, Potentially change game state
     func choose(card: CardGame<String>.Card) {

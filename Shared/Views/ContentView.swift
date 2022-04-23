@@ -8,15 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    var imageNames = ["bolt", "0.circle", "01.square.fill"]
+    var imageNames = ["bolt", "0.circle", "01.square.fill", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle", "0.circle"]
     var body: some View {
-        HStack {
-            ForEach(imageNames, id: \.self) { imageName in
-                CardView(imageName: imageName)
+        VStack {
+            ScrollView {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
+                    ForEach(imageNames, id: \.self) { imageName in
+                        CardView(imageName: imageName)
+                            .aspectRatio(2/3, contentMode: .fit)
+                    }
+                }
             }
+            .foregroundColor(.red)
         }
         .padding(.horizontal)
-        .foregroundColor(.red)
     }
 }
 

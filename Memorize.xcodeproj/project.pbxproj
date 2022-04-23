@@ -7,21 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D0B9FA82813D04800472504 /* IconMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B9FA72813D04800472504 /* IconMemoryGame.swift */; };
 		5D3829BC280E7F04007CAA26 /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3829AC280E7F00007CAA26 /* MemorizeApp.swift */; };
 		5D3829BD280E7F04007CAA26 /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3829AC280E7F00007CAA26 /* MemorizeApp.swift */; };
 		5D3829BE280E7F04007CAA26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3829AD280E7F00007CAA26 /* ContentView.swift */; };
 		5D3829BF280E7F04007CAA26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3829AD280E7F00007CAA26 /* ContentView.swift */; };
 		5D3829C0280E7F04007CAA26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D3829AE280E7F04007CAA26 /* Assets.xcassets */; };
 		5D3829C1280E7F04007CAA26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D3829AE280E7F04007CAA26 /* Assets.xcassets */; };
+		5D6834E72813756B001BF7F5 /* CardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6834E62813756B001BF7F5 /* CardGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D0B9FA72813D04800472504 /* IconMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconMemoryGame.swift; sourceTree = "<group>"; };
 		5D3829AC280E7F00007CAA26 /* MemorizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeApp.swift; sourceTree = "<group>"; };
 		5D3829AD280E7F00007CAA26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5D3829AE280E7F04007CAA26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D3829B3280E7F04007CAA26 /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3829B9280E7F04007CAA26 /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3829BB280E7F04007CAA26 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		5D6834E62813756B001BF7F5 /* CardGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +46,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D0B9FA52813C99C00472504 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D3829AD280E7F00007CAA26 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5D0B9FA62813D02C00472504 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5D0B9FA72813D04800472504 /* IconMemoryGame.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		5D3829A6280E7F00007CAA26 = {
 			isa = PBXGroup;
 			children = (
@@ -54,8 +74,10 @@
 		5D3829AB280E7F00007CAA26 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				5D0B9FA62813D02C00472504 /* ViewModels */,
+				5D0B9FA52813C99C00472504 /* Views */,
+				5D6834E528137554001BF7F5 /* Models */,
 				5D3829AC280E7F00007CAA26 /* MemorizeApp.swift */,
-				5D3829AD280E7F00007CAA26 /* ContentView.swift */,
 				5D3829AE280E7F04007CAA26 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -76,6 +98,14 @@
 				5D3829BB280E7F04007CAA26 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		5D6834E528137554001BF7F5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5D6834E62813756B001BF7F5 /* CardGame.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +208,8 @@
 			files = (
 				5D3829BE280E7F04007CAA26 /* ContentView.swift in Sources */,
 				5D3829BC280E7F04007CAA26 /* MemorizeApp.swift in Sources */,
+				5D6834E72813756B001BF7F5 /* CardGame.swift in Sources */,
+				5D0B9FA82813D04800472504 /* IconMemoryGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
